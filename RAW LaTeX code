@@ -1,0 +1,265 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage[rightcaption]{sidecap}
+\usepackage{amsmath}
+\geometry{margin=1in}
+\usepackage{mwe}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+
+\begin{document}
+\title{\textbf{Determining the spectral types of 35 stars from absorption lines in their spectra} \\ \vspace{0.2 cm} \Large{Astro Group 4} \\ \vspace{0.1 cm}\normalsize{Chris Denisson-Farrar, Dani Naidoo, Kale Boyes}}
+\author{Christof Jooste, JSTCHR003}
+\date{May 2022}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Introductions Section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introductions}
+\subsection{The Tony Fairall Teaching Observatory}
+
+The Tony Fairall Teaching Observatory (TFTO) is located atop the department of Physics, Astronomy, and Oceanography building (R.W. James building) on the University of Cape Town's Upper Campus with coordinates: \(33^{\circ} \; 57' \; 21.4'' \textrm{ South, } 18^{\circ} \; 27' \; 42.5'' \textrm{ East }^{[1]}\).
+
+It is outfitted with a 14-inch f/11 Schmidt-Cassegrain Celestron telescope on a Paramount MX German equatorial mount. The telescope features a 3" camera field rotator, an auto-focuser, two monochrome CCDs, a \(25\: \mu\)m wide single slit spectrograph, a guiding module, and a Neon-Argon calibration lamp \(^{[2]}\). The TFTO spectrograph operates at a wavelength range from 3700 \AA\:to 7500 \AA .
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  SDSS 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{The Sloan Digital Sky Survey}
+The Sloan Digital Sky Survey (SDSS) is a project which aims to survey one quarter of the night sky. This includes the absolute magnitudes, distances, and positions of stars, galaxies, quasars, and all other stellar objects.
+
+This undertaking aims to accurately map out a significant portion the night sky to produce a 3-dimensional model including some 100 000 quasars - with the hopes of better understanding the Universe, its evolution, and the current theories surrounding them. It also serves as an up-to-date database of more than roughly 300 million stars which astronomers world-wide can use to reference \(^{[3]}\). The SDSS convention with regards to stellar spectra is to cover a range of wavelengths from 3800 \AA\:to 9200 \AA .
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Star bois
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Obtaining Spectra}
+\subsection{Part A: Observations (5/35 spectra)}
+Observations with the TFTO began at 20:00 on the 25\(^{\textrm{th}}\) of April, 2022. The weather was clear and cloudless with wind speeds not exceeding 18 km/h. The calibration frames were taken before the science frames and included \(50\times 0\) second bias (offset) frames; \(5\times120\) second dark frames; and \(20\times3\) second flat-field frames. All frames (calibration and science) were taken and saved using the free software Demetra.
+
+The target for the science frames was the Wishing Well Cluster (NGC 3532), located at a right ascension and declination of RA \(11^{\textrm{h}} \; 05^{\textrm{m}} \; 33^{\textrm{s}}\) ; dec \(-58^{\circ} \; 43.8'\). Five stars were chosen arbitrarily based on the criteria that, first, each star was isolated from other stars in the telescope's camera frame; Second, each star was the only one that was on the slit of the spectrograph at any given time; Finally, each had a signal strength at its centre of roughly 40 000 ADU (\(\sim\frac{2}{3}\) of the CCD's saturation limit).
+
+These five stars were observed for a total of \(3\times120\) second science frames (360 seconds) per star. During the observation, the telescope had to be adjusted to account for drift, to ensure that the target star remained on the slit and that no other star could come within the range of the slit and contaminate the target star's spectrum. Observations concluded at midnight.
+
+Using Demetra once more, the science frames were automatically processed using the built-in "Data Reduction" tab. Given that some drift occurred for all five of the stars during all observations, under the section "Extraction" the region of interest had to be manually set for each of the \(3\times120\) second frames that were taken. The final spectra were truncated such the spectra were only plotted over wavelengths from 3800 \AA\;to 4600 \AA\;. The processed spectra for each of the five stars can be seen above in \textbf{Figure 1}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{linPlots_Displaced.png}
+    \caption{The processed spectra of all five observed stars from the NGC 3532 Wishing Well Cluster (displaced vertically by 20 normalized ADU counts per successive plot for ease of viewing). also plotted are the major element lines that were used in identifying the spectral types of each of the stars plotted as vertical, colour-coded dashed lines.}
+    \label{fig:Displaced stars}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  SDSS Plates
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Part B, C: SDSS Plates (30/35 spectra)}
+Two plates from the Sloan Digital Sky Survey were considered for the spectra of an additional 15 stars per plate (for a total of 30 spectra). Important aside: In the SDSS, the plates are numbered as XXX/YYYYY, with XXX the plate number, and YYYYY the Mean Julian Date when it was observed.
+
+The first plate that was considered is the default plate upon loading up the SDSS, plate 266/51630, and the second plate (chosen arbitrarily) was plate 299/51671. Within the plate, the objects that were captured are ordered according to their fiber ID (1 to 640), which depends on the fiber (hole) of the spectrograph the object fell.
+
+The spectrum of each object is firstly labeled according to the celestial object of origin (e.g. "Galaxy", "Star", "QSO", etc.). From this list, the first 20 spectra that were labelled as "Star" were chosen, and their unique object ID was captured - reflected in Table 2 and Table 3. (Twenty stars were chosen to account for stars that potentially have abnormal spectra). See \textbf{Figure 2} above for the four example spectra.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Plate 266 Star 5.png}
+        \caption{Stellar spectrum from SDSS plate 266/51630 \\ ObjID: 587725076069154836; Fiber no. 571}
+        \label{fig:Plate 1 Star 5}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Plate 266 Star 7.png}
+        \caption{Stellar spectrum from SDSS plate 266/51630 \\ ObjID: 588848900434362388; Fiber no. 346}
+        \label{fig:Plate 1 Star 7}
+    \end{subfigure}
+    
+    \vfill
+    
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Plate 299 Star 10.png}
+        \caption{Stellar spectrum from SDSS plate 299/51671 \\ ObjID: 588848900997906597; Fiber no. 620}
+        \label{fig:Plate 2 Star 10}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Plate 299 Star 13.png}
+        \caption{Stellar spectrum from SDSS plate 299/51671 \\ ObjID: 587722983362330677; Fiber no. 624}
+        \label{fig:Plate 2 Star 13}
+    \end{subfigure}
+    
+    \caption{Four arbitrarily chosen stellar spectra obtained from the SDSS with their unique object ID's. Subplots (a) and (b) are from stars in plate 266/51630 and (c) and (d) are from stars in plate 299/51671.}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Analyses
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Analysing the Spectra}
+
+All 35 of the obtained stellar spectra were analysed using, firstly, Table 2 from Christopher J. Evans's \textit{A 2dF survey of the Small Magellanic Cloud} \(^{[4]}\) for more rigorous descriptors of ratios of certain elements, and secondly, the R.O. Gray \textit{Digital Spectral Classification} from the department of Physics and Astronomy at the Appalachian State University \(^{[5]}\) which makes use of stellar spectra that had already been categorised. All relevant stars were assumed to be on the Main Sequence.
+
+Using primarily the criteria found in Evans's Table 2, and using the figures from the Gray Classification as a supplement if a decision could not be reached, all of the obtained spectra were enlarged (if not by means of truncation then by means of changing the aspect ratio - the latter being used mainly for the 30 stellar spectra from the SDSS) such that the section of each spectrum corresponding to wavelengths between 3600 \AA\;and 4800 \AA\;was able to be viewed clearly. The results were tabulated from \textbf{Table 1} to \textbf{Table 3}.
+
+The stars were grouped into the following grid of one of O5, B0, B5, A0, A5, F0, F5, G0, G5, K0, K5, M0, M5, or ‘other’. If, for example, any of the stars belonged to the spectral class of B3, they would be classed according to the closest neighbouring spectral class from the grid (in this case it would be classified as B5).
+
+\subsection{Tabulating Results}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|}
+    %\caption{Observations from NGC 3532}
+    \hline
+    Star no. & Determined Spectral Type & Motivations\\[1ex]
+    \hline
+     && \(\frac{\textrm{Ca II K}}{\textrm{H}\epsilon + \textrm{ Ca II H}} < 0.33\) \\[0.5ex]
+    First Star &B8 \(\rightarrow\) A0& \(\textrm{Fe II } \lambda4223 \sim \textrm{ Si II } \lambda4128\)\\[0.5ex]
+     && \(\textrm{Mg II } \lambda4481 \sim \textrm{ He I } \lambda4421\) \\[0.5ex]
+     && \(\textrm{He I } \lambda4121 < \textrm{ Si II }\lambda4128 < \textrm{ He I }\lambda4143\)\\[0.5ex]
+    \hline
+     Second Star &B9 \(\rightarrow\) A0& \(\frac{\textrm{Ca II K}}{\textrm{H}\epsilon + \textrm{ Ca II H}}<0.33\)\\[0.5ex]
+     &&\(\textrm{He I } \lambda4121 < \textrm{ Si II }\lambda4128 < \textrm{ He I }\lambda4143\)\\[0.5ex]
+    \hline
+    Third Star &B9 \(\rightarrow\) A0& \(\frac{\textrm{Ca II K}}{\textrm{H}\epsilon + \textrm{ Ca II H}} < 0.33\)\\[0.5ex]
+     && \(\textrm{Fe II } \lambda4223 \sim \textrm{ Si II } \lambda4128\)\\[0.5ex]
+    \hline
+    Fourth Star &A0& \(\frac{\textrm{Ca II K}}{\textrm{H}\epsilon + \textrm{ Ca II H}} < 0.33\)\\[0.5ex]
+     &&\(\textrm{ Si II }\lambda4128 \sim \textrm{ He I }\lambda4143\)\\[0.5ex] 
+    \hline
+     && \(\frac{\textrm{Ca II K}}{\textrm{H}\epsilon + \textrm{ Ca II H}} < 0.33\) \\[0.5ex]
+    Fifth Star &B8 \(\rightarrow\) A0& \(\textrm{Mg II } \lambda4481 > \textrm{ He I } \lambda4421\) \\[0.5ex]
+     && \(\textrm{He I } \lambda4121 < \textrm{ Si II }\lambda4128 < \textrm{ He I }\lambda4143\)\\[0.5ex]
+    \hline
+    
+\end{tabular}
+\caption{Observations from NGC 3532.}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|}
+    %\caption{Observations from NGC 3532}
+    \hline
+    Star&Star ID & Determined Spectral Type & Primary Motivation\\[1ex]
+    \hline
+    01&588848900434690102   &F5& Clear presence of CH G-band\\[1ex]
+    \hline
+    02&587725074458738699	&B5& Fe II (\(\lambda\)4233) \(<\) Si II (\(\lambda\)4128)\\[1ex]
+    \hline
+    03&587725076068696131	&A2 \(\rightarrow\) A0& 0.33 \(<\) Ca II K:Ca II H \(<\) 0.53\\[1ex]
+    \hline
+    04&588848899360751647	&A0&	Ca II K:Ca II H \(<\) 0.33\\[1ex]
+    \hline
+    05&587725076069154836	&A0&	Ca II K:Ca II H \(<\) 0.33\\[1ex]
+    \hline
+    06&587725073921343533&G2 \(\rightarrow\) G0& G-band \(\sim\) H\(\gamma\)\\[1ex]
+    \hline
+    07&588848900434362388&G2 \(\rightarrow\) G0& G-band \(\sim\) H\(\gamma\)\\[1ex]
+    \hline
+    08&588848900434428004&B5& Ca II K absent\\[1ex]
+    \hline
+    09&587725075532415028&A0& Ca II K:Ca II H \(<\) 0.33\\[1ex]
+    \hline
+    10&587725074458083452&A5& 0.75 \(<\) Ca II K:Ca II H \(<\) 0.85\\[1ex]
+    \hline
+    11&588848899898212441&B8 \(\rightarrow\) A0& He I (\(\lambda\)4143) \(<\) Si II (\(\lambda\)4128) \(<\) He I (\(\lambda\)4143)\\[1ex]
+    \hline
+    12&588848900434886806&A5& 0.75 \(<\) Ca II K:Ca II H \(<\) 0.85\\[1ex]
+    \hline	
+    13&588848900971233454&G8 \(\rightarrow\) K0& H\(\gamma\) \(<\) Fe I (\(\lambda\)4325)\\[1ex]
+    \hline
+    14&588848899898343534&B5& Ca II K absent\\[1ex]
+    \hline
+    15&588848900434427950&A0& Small Mg II presence, Strong Balmer Lines\\[1ex]
+    \hline
+    
+    
+\end{tabular}
+\caption{Stellar spectra from SDSS plate 266/51630}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|}
+    \hline
+    Star no.&Star ID & Determined Spectral Type & Primary Motivation\\[1ex]
+    \hline
+    01&587722984435417112	&A0& Ca II K:Ca II H \(<\) 0.33  \\[1ex]
+    \hline
+    02&588848899386834991	&G0& 0.75 \(<\) G-band:H\(\gamma\) \(<\) 0.90\\[1ex]
+    \hline
+    03&587722984435220564	&A0& Ca II K:Ca II H \(<\) 0.33  \\[1ex]
+    \hline
+    04&588848900997316783&F0&Ca II K \(\sim\) Ca II H\\[1ex] 
+    \hline
+    05&587722981751259211&O9 \(\rightarrow\) B0&He II (\(\lambda\)4200) \(\sim\) He I (\(\lambda\)4143)\\[1ex]
+    \hline
+    06&588848900460118151&B0&He II \(\lambda\)4686, \(\lambda\)4541 present, He II \(\lambda\)4200 weak\\[1ex]
+    \hline
+    07&587722984435679309&A5&0.75 \(<\) Ca II K:Ca II H \(<\) 0.85\\[1ex]
+    \hline
+    08&588848899386376231&O9 \(\rightarrow\) B0&He II (\(\lambda\)4200) \(\sim\) He I (\(\lambda\)4143)\\[1ex]
+    \hline
+    09&588848899386376447&B5&Si II \(\lambda\)4128 \(<\) He I \(\lambda\)4121\\[1ex]
+    \hline
+    10&588848900997906597&F0&Ca II K \(\sim\) Ca II H\\[1ex]
+    \hline
+    11&587722984435089544&A7 \(\rightarrow\) A5&0.85 \(<\) Ca II K:Ca II H \(<\) 0.95\\[1ex]
+    \hline
+    12&587722981751324867&A5&0.75 \(<\) Ca II K:Ca II H \(<\) 0.85\\[1ex]
+    \hline
+    13&587722983362330677&F5&Clear presence of CH G-band\\[1ex]
+    \hline
+    14&587722983898153059&A3 \(\rightarrow\) A5&0.53 \(<\) Ca II K:Ca II H \(<\) 0.75\\[1ex]
+    \hline
+    15&588848900997120063&A0& Ca II K:Ca II H \(<\) 0.33\\[1ex]
+    \hline
+    
+\end{tabular}
+\caption{Stellar spectra from SDSS plate 299/51671}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\newpage
+\subsection{Bar Chart}
+Plotting a bar chart of the final spectral types for all of the 30 stars from \textbf{Table 2} and \textbf{Table 3} produces \textbf{Figure 3}, below:
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Bar chart.png}
+    \caption{A bar chart showing the frequency of the spectral types in the SDSS (from the 30 stars whose spectral types have been identified in \textbf{Table 2} and \textbf{Table 3}).}
+    \label{fig:not_a_histogram}
+\end{figure}
+
+Note that no stars fell into the O-type classification. This is simply because such massive stars are incredibly rare and also very short-lived compared to other stars and celestial objects. Additionally, their gravitational influence is such that few objects can exist close to them, usually causing them to form in isolation (which makes identifying them very difficult since determining the mass of a star is most easily done from its gravitational interactions with objects in its surroundings).
+
+Also of note is that, of the 40 \textit{total} stars that were obtained from the SDSS (fifteen stars with five stars extra from each plate to account for potential abnormalities), only six showed no clear signs of falling into any of the spectral types - mostly due to uncharacteristic emission lines being present in their spectra.
+
+\section{Conclusion}
+
+Based on the details outlined in Table 2 of Christopher J. Evans's \textit{A 2dF survey of the Small Magellanic Cloud} (with complementary references to the images from R.O. Gray's \textit{Digital Spectral Classification}), all five of the arbitrarily chosen stars that were observed in the NGC 3532 Wishing Well Cluster were found to be closest to a spectral class of A0.\\ \\ Based on the above texts also, three stars were found to be of the spectral class B0, four of B5, nine of A0, six of A5, two of F0, two of F5, and one of K0 from the Sloan Digital Sky Survey's (SDSS) plates 266/51630 and 299/51671 collectively.\\ \\ Contrary to expectation, however, A0V stars were shown to be the most abundant spectral class from the small sample size of 30 stars from two SDSS plates. Bigger sample sizes from more plates, a better method of comparing spectral classes, and higher resolution spectra must be used in a further study to improve precision and to shine light on this finding.
+
+\newpage
+\section{References, Bibliography, and Citations}
+\textbf{[1]}   B. Yotti, \textit{Tony Fairall Teaching Observatory East Dome Telescope's User Manual}, 2019, University of Cape Town.\\ \\
+\textbf{[2]}   B. Yotti, \textit{User Manual TFTO West Dome (Spectroscopy)}, March 2022, University of Cape Town.\\ \\
+\textbf{[3]}   Sloan Digital Sky Survey "About" page, http://skyserver.sdss.org/dr6/en/sdss/\\ \\
+\textbf{[4]}   C.J. Evans et al., \textit{A 2dF survey of the Small Magellanic Cloud}, September 2004, Harvard University.\\ \\
+\textbf{[5]}   R.O. Gray, \textit{A Digital Spectral Classification Atlas}, Appalachian State University.\\ \\
+
+\end{document}
